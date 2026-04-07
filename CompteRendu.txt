@@ -1,0 +1,88 @@
+﻿Compte Rendu du TP 1 d’introduction à GIT:
+Travailler sur un répertoire local
+
+1. Configuration de Git
+
+Nous avons commencé par configurer Git avec :
+    • un nom d’utilisateur 
+    • une adresse email 
+    • un éditeur de texte 
+Commandes utilisées :
+git config --global user.name "Nom"
+git config --global user.email "email"
+git config --global core.editor "éditeur"
+git config --list
+
+
+
+
+
+
+
+
+
+2. Création d’un dépôt local
+Nous avons créé l’arborescence suivante :
+courseGIT/
+└── tp1
+Puis initialisé Git dans le dossier :
+git init
+👉 Cela crée un dossier caché .git qui contient tout l’historique du projet.
+Commande importante :
+git status
+Elle permet de voir l’état des fichiers dans le dépôt.
+
+
+
+
+
+
+
+
+
+
+
+3. Création et suivi du fichier README.md
+Nous avons créé un fichier README.md contenant les informations du TP.
+🔄 Suivi des modifications
+Étapes pour enregistrer un fichier dans Git :
+    1. Vérifier l’état :
+    • git status
+    • Ajouter le fichier :
+    • git add README.md
+    • Valider :
+    1. git commit -m "Ajout du fichier README.md"
+    2. 
+👉 On apprend ici le cycle de base de Git :
+modifier → ajouter → valider
+
+4. Gestion d’un programme Java
+Nous avons créé un projet avec :
+src/Cryptomonnaie.java
+Contenant une classe simple avec :
+    • un nom 
+    • une valeur de jeton 
+Puis nous avons ajouté et validé ce fichier :
+git add src/Cryptomonnaie.java
+git commit -m "Première version du fichier Cryptomonnaie.java"
+👉 Ensuite, la commande git log permet de voir l’historique des versions.
+
+🚫 4.1 Fichier .gitignore
+Après compilation (javac), un fichier .class est généré.
+👉 Problème : ce fichier ne doit pas être suivi par Git.
+Solution :
+Créer un fichier .gitignore :
+*.class
+Puis l’ajouter :
+git add .gitignore
+git commit -m ".gitignore ajouté"
+👉 Git ignore désormais automatiquement ces fichiers.
+Nous avons ensuite ajouté d’autres règles :
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
